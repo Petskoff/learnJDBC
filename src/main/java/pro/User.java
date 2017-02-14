@@ -1,8 +1,6 @@
 package pro;
 
-/**
- * Created by PRO on 14.02.2017.
- */
+
 public class User {
     private int id;
     private String username;
