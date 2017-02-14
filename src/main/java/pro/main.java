@@ -12,9 +12,6 @@ import java.sql.Statement;
  * Created by PRO on 13.02.2017.
  */
 public class main {
-//    private static final String URL = "jdbc:mysql://localhost:3306/mydbtest";
-//    private static final String USERNAME = "root";
-//    private static final String PASSOWRD = "root";
 
     private static final String NEWROW = "INSERT INTO users (username,password,icon) VALUES (?,?,?)";
 
@@ -25,12 +22,15 @@ public class main {
         String query = "select * from users;";
 
         try {
+
             preparedStatement = worker.getConnection().prepareStatement(NEWROW);
 
             preparedStatement.setString(1,"Kabaska");
             preparedStatement.setString(2,"Bean");
             preparedStatement.setBlob(3, new FileInputStream("icon.jpg"));
             preparedStatement.execute();
+
+
 
             statement = worker.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
